@@ -5,7 +5,6 @@ clean:
 		.ruff_cache \
 		build \
 		dist \
-		src/cchardet/cli/__pycache__ \
 		src/cchardet/__pycache__ \
 		src/cchardet/*.cpp \
 		src/cchardet/*.pyc \
@@ -29,14 +28,10 @@ lint:
 	ruff check
 
 .PHONY: format
-format:
+lint:
 	ruff format
 
 .PHONY: bench
 bench: clean cython
 	python setup.py build_ext -i -f
 	python tests/bench.py
-
-.PHONY: sdist
-sdist: clean cython
-	python setup.py sdist

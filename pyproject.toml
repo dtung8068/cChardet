@@ -3,8 +3,7 @@ name = "cchardet"
 authors = [{ name = "PyYoshi", email = "myoshi321go@gmail.com" }]
 urls.Homepage = 'https://github.com/PyYoshi/cChardet'
 description = 'cChardet is high speed universal character encoding detector.'
-readme = { file = 'README.md', content-type = 'text/markdown' }
-license = { file = "COPYING" }
+license = { text = 'Mozilla Public License' }
 classifiers = [
     'License :: OSI Approved :: Mozilla Public License 1.1 (MPL 1.1)',
     'License :: OSI Approved :: GNU General Public License (GPL)',
@@ -24,9 +23,6 @@ dynamic = ["version"]
 [build-system]
 requires = ["setuptools", "Cython", "wheel"]
 build-backend = "setuptools.build_meta"
-
-[project.scripts]
-cchardetect = "cchardet.cli.cchardetect:main"
 
 [tool.setuptools.dynamic]
 version = { attr = "cchardet.__version__" }
